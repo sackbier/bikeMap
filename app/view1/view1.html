@@ -1,0 +1,22 @@
+<div id="menu-left">
+    <div ng-repeat="tour in tourList">
+        <h2 ng-bind="tour.title" ng-class="{selectedTour: tour.selected}">Title</h2>
+        <p>Länge: <span ng-bind="tour.length"></span>
+        </p>
+        <p>Höhe: <span ng-bind="tour.height"></span>
+        </p>
+        <p>Schwierigkeit: <span ng-bind="tour.level"></span>
+        </p>
+        <!--
+        <ui-gmap-marker idKey="tour.id" coords="tour.coords">
+</ui-gmap-marker>
+-->
+    </div>
+</div>
+
+<ui-gmap-google-map center='map.center' zoom='map.zoom'>
+    <span ng-repeat="tour in tourList">
+        <ui-gmap-marker coords="tour.coords" click="selectTour" options="{title: tour.title}" idkey="tour.id">
+        </ui-gmap-marker>
+    </span>
+</ui-gmap-google-map>
