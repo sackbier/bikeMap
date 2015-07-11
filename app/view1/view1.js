@@ -9,13 +9,6 @@ angular.module('myApp.view1', ['ngRoute', 'uiGmapgoogle-maps'])
     });
 }])
 
-.config(function (uiGmapGoogleMapApiProvider) {
-    uiGmapGoogleMapApiProvider.configure({
-        //key: 'your api key',
-        v: '3.20',
-        libraries: 'weather,geometry,visualization'
-    });
-})
 
 .controller('View1Ctrl', function ($scope) {
     $scope.tourList = [
